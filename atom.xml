@@ -4,7 +4,7 @@
  <title>SDStreets</title>
  <link href="http://sdstreets.org/atom.xml" rel="self"/>
  <link href="http://sdstreets.org/"/>
- <updated>2015-11-06T01:06:25+00:00</updated>
+ <updated>2016-09-19T18:43:00+00:00</updated>
  <id>http://sdstreets.org</id>
  <author>
    <name>Maksim</name>
@@ -37,8 +37,8 @@ quotes look nice, like this: &amp;ldquo;hoho&amp;rdquo;, your dashes and hypens 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;def print_hi(name)
   puts &amp;quot;Hi, #{name}&amp;quot;
 end
-print_hi('Tom')
-#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+print_hi(&amp;#39;Tom&amp;#39;)
+#=&amp;gt; prints &amp;#39;Hi, Tom&amp;#39; to STDOUT.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of
 Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/mojombo/jekyll&quot;&gt;Jekyll&amp;rsquo;s GitHub repo&lt;/a&gt;.&lt;/p&gt;
