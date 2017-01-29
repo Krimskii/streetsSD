@@ -85,12 +85,39 @@ var viewController = {
             console.log(response);
             return {
                 suggestions: $.map(response.features, function(feature) {
-                    return { value: feature.properties.label, data: feature.geometry.coordinates };
+                    return {
+                        value: feature.properties.name,
+                        data: {
+                            'lonLat': feature.geometry.coordinates,
+                            'layer': feature.properties.layer
+                        }
+                    };
                 })
             }
         },
-        onSelect: function (suggestion) {
+        formatResult: function(suggestion, currentValue) {
             console.log(suggestion);
+            console.log(currentValue);
+            layer_icons = {
+                'neighborhood': 'fa-map-signs',
+                'address': 'fa-location-arrow',
+                'undefined': 'fa-location-arrow'
+            }
+            layer_icon = layer_icons[suggestion.data.layer] || layer_icons['undefined'];
+            format_string = ''
+                + '<i class="fa ' + layer_icon + '"></i>'
+                + suggestion.value;
+
+            return format_string;
+        },
+        onSelect: function (suggestion) {
+            position = {
+                coords: {
+                    'longitude': suggestion.data.lonLat[0],
+                    'latitude': suggestion.data.lonLat[1]
+                }
+            }
+            vc.mapToPosition(position);
         }
     });
     /*$('form#address-search').submit(function(e) {
